@@ -1,0 +1,14 @@
+type Pool @entity {
+  id: ID!
+  hasCollected: Boolean! # if the host has collected their cards
+  host: Bytes!
+  players: [Bytes!] # array of player addresses
+  proto: Int!
+  quality: Int!
+  quorum: BigInt!
+  random: BigInt
+  status: Int! # 1 active - 2 activated - 3 cancelled
+  tokenId: BigInt!
+  tokens: [BigInt!] # array of tokens
+  winner: Bytes
+}

@@ -1,0 +1,39 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: mainnet
+    source:
+      address: "0x92422f53e53741c6127d0ab30d5ea3df794ee86f"
+      abi: Contract
+      startBlock: 9564037
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - OnAddPlayer
+        - OnCancelPool
+        - OnCollect
+        - OnCreatePool
+        - OnRemovePlayer
+        - OnWinner
+      abis:
+        - name: Contract
+          file: Contract/abis/Contract.json
+      eventHandlers:
+        - event: OnAddPlayer(indexed uint256,indexed address,uint256)
+          handler: handleOnAddPlayer
+        - event: OnCancelPool(indexed uint256)
+          handler: handleOnCancelPool
+        - event: OnCollect(indexed uint256)
+          handler: handleOnCollect
+        - event: OnCreatePool(indexed uint256,indexed address,uint16,uint8,uint256,uint256)
+          handler: handleOnCreatePool
+        - event: OnRemovePlayer(indexed uint256,uint256)
+          handler: handleOnRemovePlayer
+        - event: OnWinner(indexed uint256,indexed address,uint256)
+          handler: handleOnWinner
+      file: Contract/Contract.wasm
