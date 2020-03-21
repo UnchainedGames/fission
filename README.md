@@ -24,7 +24,7 @@ Alice owns a Shadow Avatar of War. Alice creates a new reaction pool requiring 6
 <img src="./images/fusion-diagram.png">
 
 ## Game Contract
-https://etherscan.io/address/0x92422f53e53741c6127d0ab30d5ea3df794ee86f
+https://etherscan.io/address/0x150c7856bea3b6cdcac0013dc3d6fa50fffaa35d
 
 ## Subgraph
 https://thegraph.com/explorer/subgraph/unchainedgames/fission
